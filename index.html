@@ -1,0 +1,119 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Adit Raizada · Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Hanken+Grotesk:wght@400..800&family=Instrument+Serif:ital@1&display=swap">
+<style>
+@property --w{syntax:'<length>';inherits:true;initial-value:0px}
+@property --h{syntax:'<length>';inherits:true;initial-value:0px}
+@property --d{syntax:'<length>';inherits:true;initial-value:0px}
+@property --rod{syntax:'<length>';inherits:true;initial-value:8px}
+@property --span{syntax:'<length>';inherits:true;initial-value:0px}
+@property --fh{syntax:'<length>';inherits:true;initial-value:0px}
+:root{--e:cubic-bezier(.55,0,.25,1);--r:repeating-linear-gradient(90deg,#ffffff2e 0 3px,#00000026 3px 6px);box-sizing:border-box;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+html{height:100%;background:linear-gradient(#0f74e0,#1f93f2 55%,#46b8ff) fixed}
+body{margin:0;height:100%;display:flex;flex-direction:column;overflow:hidden;font:500 15px 'Hanken Grotesk',system-ui,sans-serif;color:#fff}
+nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:72px;padding:0 48px}
+.logo{font:800 34px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.04em}
+.ln{display:flex;gap:6px}
+.ln button{all:unset;cursor:pointer;font-weight:700;color:#e6f3ff;padding:8px 14px;border-radius:99px}
+.ln button:hover,.ln button:focus-visible{background:#ffffff26}
+.talk{justify-self:end;font:700 16px 'Bricolage Grotesque',sans-serif;color:#fff;text-decoration:none}
+#st{position:relative;flex:1;min-height:0;overflow:hidden;perspective:1400px;perspective-origin:50% 35%;background:linear-gradient(#ffffff14 1px,#0000 1px) 0 0/44px 44px,linear-gradient(90deg,#ffffff14 1px,#0000 1px) 0 0/44px 44px}
+.bg{position:absolute;left:50%;top:58%;transform:translate(-50%,-50%);font:700 clamp(90px,19vw,330px)/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.04em;white-space:nowrap;pointer-events:none;user-select:none;opacity:.4}
+.dep{position:absolute;left:48px;top:52px;font-size:11px;font-weight:600;letter-spacing:.2em;color:#d7ecff}.dep b{color:#ffd23f}
+.pill{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);z-index:40;padding:8px 16px;border-radius:99px;background:#ffffff2e;backdrop-filter:blur(8px);font-size:11px;font-weight:700;letter-spacing:.18em;pointer-events:none}
+.rail{position:absolute;left:0;right:0;top:18px;height:16px;border-radius:8px;background:linear-gradient(#fff,#c9d3df);box-shadow:0 8px 20px #0a4fb066;z-index:25}
+.rail::after{content:"";position:absolute;left:12px;right:12px;top:7px;border-top:2px dashed #9aa6b4}
+#claw{position:absolute;top:0;left:0;width:0;height:0;z-index:30;pointer-events:none;transition:left var(--t,0ms) var(--e),--rod var(--t,0ms) var(--e),--span var(--t,0ms) var(--e),--fh var(--t,0ms) var(--e)}
+#claw i{position:absolute}
+.car{left:-34px;top:9px;width:68px;height:34px;border-radius:12px;background:linear-gradient(#fff,#cfd8e3);box-shadow:0 6px 14px #0b4a9a66}
+.car::before,.car::after{content:"";position:absolute;top:-4px;width:11px;height:11px;border-radius:50%;background:#8d99a8}.car::before{left:9px}.car::after{right:9px}
+.rod{left:-3px;top:43px;width:6px;height:var(--rod);background:linear-gradient(90deg,#9aa6b4,#fff,#9aa6b4)}
+.head{left:-36px;top:calc(43px + var(--rod));width:72px;height:34px;border-radius:12px;background:linear-gradient(#fff,#d5dde8);box-shadow:0 6px 14px #0b4a9a66}
+.fg{left:0;top:calc(73px + var(--rod));width:0;height:0;transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.op .l{transform:rotate(16deg)}.op .r{transform:rotate(-16deg)}
+.arm{top:0;height:10px;border-radius:5px;background:#fff;box-shadow:0 4px 8px #0a4fb055}
+.l .arm{right:0;width:calc(var(--span)/2 + 10px)}.r .arm{left:0;width:calc(var(--span)/2 + 10px)}
+.fin{top:0;width:10px;height:var(--fh);border-radius:5px 5px 8px 8px;background:linear-gradient(90deg,#fff,#cdd6e2)}
+.l .fin{left:calc(var(--span)/-2 - 10px)}.r .fin{left:calc(var(--span)/2)}
+.c{position:absolute;width:0;height:0;transform-style:preserve-3d;transition:left var(--t) var(--e),top var(--t) var(--e),--w var(--t) var(--e),--h var(--t) var(--e),--d var(--t) var(--e),transform var(--t) var(--e),translate .25s}
+.c:hover{translate:0 -10px}
+.p{position:absolute}
+.bk,.tp,.bt{left:calc(var(--w)/-2);background:var(--r),var(--c)}
+.bk{top:calc(var(--h)/-2);width:var(--w);height:var(--h);transform:rotateY(180deg) translateZ(calc(var(--d)/2))}
+.tp,.bt{top:calc(var(--d)/-2);width:var(--w);height:var(--d)}
+.tp{transform:rotateX(90deg) translateZ(calc(var(--h)/2))}.bt{transform:rotateX(-90deg) translateZ(calc(var(--h)/2))}
+.le,.ri{left:calc(var(--d)/-2);top:calc(var(--h)/-2);width:var(--d);height:var(--h);background:linear-gradient(90deg,#0000 calc(50% - 1px),#0005 calc(50% - 1px) calc(50% + 1px),#0000 0),var(--k)}
+.le{transform:rotateY(-90deg) translateZ(calc(var(--w)/2))}.ri{transform:rotateY(90deg) translateZ(calc(var(--w)/2))}
+.fr{position:absolute;left:calc(var(--w)/-2);top:calc(var(--h)/-2);width:var(--w);height:var(--h);transform:translateZ(calc(var(--d)/2));transform-style:preserve-3d;outline:1px solid var(--k)}
+.dl,.dr{position:absolute;top:0;width:50%;height:100%;transform-style:preserve-3d;transition:transform .45s var(--e)}
+.dl{left:0;transform-origin:0 50%}.dr{right:0;transform-origin:100% 50%}
+.open .dl,.open .dr{transition-duration:.75s;transition-timing-function:cubic-bezier(.34,1.56,.64,1)}
+.open .dl{transform:rotateY(-122deg)}.open .dr{transform:rotateY(122deg)}
+.o,.n{position:absolute;inset:0;backface-visibility:hidden}
+.o{background:var(--r),var(--c)}.dl .o{border-right:2px solid var(--k);transform:translateZ(1px)}.dr .o{border-left:2px solid var(--k)}
+.n{background:var(--k);transform:rotateY(180deg)}
+.lab{position:absolute;left:8%;top:8%;font:700 calc(var(--h)*.28)/.84 'Bricolage Grotesque',sans-serif;white-space:nowrap}
+.tag{position:absolute;right:8%;bottom:8%;font-weight:800;font-size:max(8px,calc(var(--h)*.08));letter-spacing:.2em}
+.hit{position:absolute;inset:0;border:0;background:none;cursor:pointer;transform:translateZ(3px)}
+.hit:focus-visible{outline:3px solid #ffd23f;outline-offset:-5px}.open .hit{display:none}
+.wall{position:absolute;inset:0;transform:translateZ(-3px);background:repeating-linear-gradient(90deg,#ffffff0a 0 3px,#0000 3px 6px),#0b1a4a;font-size:max(11px,calc(var(--h)/18));display:flex;align-items:center;justify-content:center;text-align:center;color:#cfd9ee;overflow:hidden}
+.in{width:84%;opacity:0;transition:opacity .5s .25s}.open .in{opacity:1}
+.kk{font-weight:800;font-size:.72em;letter-spacing:.2em;text-transform:uppercase;color:var(--a)}
+h2{margin:.3em 0 .45em;font:700 2.3em/1 'Bricolage Grotesque',sans-serif;color:#fff;outline:0}
+h2 em{font:italic 400 1.15em/1 'Instrument Serif',serif;color:var(--a)}
+.in p{margin:0;line-height:1.4}.in ul{list-style:none;margin:0;padding:0;text-align:left}.in li{margin:.3em 0;line-height:1.35}.in li b{color:#fff}
+.ch span{display:inline-block;margin:.2em;padding:.3em .8em;border:1px solid #ffffff55;border-radius:99px;color:#fff}
+.cta{display:inline-block;margin-top:.8em;padding:.5em 1.1em;border-radius:99px;background:var(--a);color:#0b1a4a;font-weight:800;text-decoration:none}
+.nx{all:unset;cursor:pointer;display:inline-block;margin-top:.9em;font-size:.8em;font-weight:800;letter-spacing:.12em;color:var(--a);border-bottom:1px solid var(--a)}.nx:hover,.nx:focus-visible{color:#fff;border-color:#fff}.cta+.cta{margin-left:.5em;background:#fff}.ln button.on{background:#fff;color:#0f74e0}.pill{transition:background .2s}.pill.h{background:#ffd23f;color:#0b1a4a}
+.hand{position:absolute;z-index:45;left:0;top:0;pointer-events:none;font-size:34px;line-height:1;opacity:0;transition:opacity .35s,left .8s var(--e),top .8s var(--e)}.hand.show{opacity:1}
+.hand i{display:block;font-style:normal;animation:tap 1.4s ease-in-out infinite;filter:drop-shadow(0 4px 6px #0a4fb088)}
+.hand::after{content:"";position:absolute;left:0;top:2px;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;border:3px solid #fff;animation:rip 1.4s ease-out infinite}
+.hand span{position:absolute;left:0;top:46px;transform:translateX(-50%);white-space:nowrap;font:800 11px 'Hanken Grotesk',sans-serif;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border-radius:99px;background:#ffd23f;color:#0b1a4a}
+@keyframes tap{0%,100%{transform:translate(-50%,0) scale(1)}40%{transform:translate(-50%,-12px) scale(.9)}}
+@keyframes rip{0%{transform:scale(.4);opacity:.9}80%,100%{transform:scale(4);opacity:0}}
+@media(prefers-reduced-motion:reduce){.hand i,.hand::after{animation:none}}
+@media(max-width:700px){nav{grid-template-columns:1fr auto;padding:8px 14px}.ln{grid-row:2;grid-column:1/3;justify-content:center}.logo{font-size:28px}.pill,.dep{display:none}.lab{font-size:calc(var(--h)*.25)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+</style></head><body>
+<nav><div class="logo">adit</div><div class="ln"><button data-i="1">Work</button><button data-i="2">About</button><button data-i="3">Process</button><button data-i="6">Contact</button></div><a class="talk" href="mailto:aditraizada3@gmail.com">Let’s Talk ↗</a></nav>
+<main id="st"><div class="bg" aria-hidden="true">PORTFOLIO</div><div class="dep">ADIT’S DEPOT · <b>7 CONTAINERS</b> · 2026</div><div class="rail" aria-hidden="true"></div>
+<div id="claw" class="op" aria-hidden="true"><i class="rod"></i><i class="car"></i><i class="head"></i><i class="fg l"><i class="arm"></i><i class="fin"></i></i><i class="fg r"><i class="arm"></i><i class="fin"></i></i></div>
+<div class="hand" aria-hidden="true"><i>👆</i><span>Tap to open</span></div><div class="pill">PICK A CONTAINER ↓</div></main>
+<script>
+const pl=document.querySelector('.pill'),st=document.getElementById('st'),cl=document.getElementById('claw'),RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const T=n=>RM?0:n,sl=n=>new Promise(r=>setTimeout(r,T(n)));
+const D=[
+['PORT','FOLIO','#e5322d','#a91f1b','ADIT',.48,.66,-14,-24,6,.5,.64,'#ff8a82','01 / Hello','Hi, I’m <em>Adit.</em>','<p>A digital marketing student who turns content experiments into real enquiries. Every container holds a piece of my work.</p>'],
+['THE','WORK','#f26a1f','#b84a10','02',.13,.86,-16,28,16,.17,.91,'#ffa05a','02 / Selected work','The <em>work.</em>','<ul><li><b>Vama Homestead</b> · 86+ posts, 37K+ views, 25+ enquiries</li><li><b>Inverted Cafe</b> · Instagram built to 16K+ views</li><li><b>CSR Outreach</b> · village drive for local goodwill</li></ul>'],
+['ABOUT','ME','#1d55d8','#123a9c','03',.36,.90,-12,-20,-10,.5,.93,'#7fa8ff','03 / About me','A little about <em>me.</em>','<p>BBA in Digital Marketing &amp; E-commerce at Graphic Era, Dehradun. I test hooks, read the numbers and turn audience feedback into growth.</p>'],
+['PRO','CESS','#f6b919','#c08a0a','04',.60,.88,-14,24,12,.84,.90,'#ffd23f','04 / Process','How I <em>work.</em>','<ul><li><b>01 Research</b> · SWOT, interviews, trends</li><li><b>02 Experiment</b> · A/B test emotional hooks</li><li><b>03 Iterate</b> · read analytics, improve</li></ul>'],
+['TOOL','KIT','#97a1ad','#6c7682','05',.86,.86,-16,-30,-14,.20,.77,'#c9d2dd','05 / Toolkit','What’s in the <em>box.</em>','<div class="ch"><span>Google Analytics</span><span>Power BI</span><span>SQL</span><span>Figma</span><span>Meta Business Suite</span><span>Canva</span><span>CapCut</span></div>'],
+['WHAT','I DO','#e5322d','#a91f1b','06',.25,.68,-14,30,-12,.52,.79,'#ff8a82','06 / What I do','What I <em>do.</em>','<div class="ch"><span>Brand strategy</span><span>Growth experiments</span><span>Content &amp; reels</span><span>Customer discovery</span></div>'],
+['SAY','HELLO','#2546b8','#172f80','07',.73,.68,-14,-26,16,.82,.76,'#8aa4ff','07 / Say hello','Got an <em>idea?</em>','<p>Have a brand to grow, an experiment to run, or just want to say hi?</p><a class="cta" href="mailto:aditraizada3@gmail.com">aditraizada3@gmail.com ↗</a><a class="cta" href="https://linkedin.com/in/adit-raizada-2a7106341" target="_blank" rel="noopener">LinkedIn ↗</a>']];
+let cs=[],held=-1,busy=0,q=null,ht;const hd=document.querySelector('.hand'),seen=new Set([0]);
+function hint(){clearTimeout(ht);hd.classList.remove('show');if(seen.size>=D.length||busy||q!==null)return;ht=setTimeout(()=>{const n=D.findIndex((_,i)=>!seen.has(i));if(n<0)return;const g=G(n);hd.style.left=g.x+'px';hd.style.top=g.y+'px';hd.classList.add('show')},1400)}
+D.forEach((d,i)=>{const c=document.createElement('div');c.className='c';c.style.cssText=`--c:${d[2]};--k:${d[3]};--a:${d[12]}`;
+c.innerHTML=`<i class="p bk"></i><i class="p le"></i><i class="p ri"></i><i class="p tp"></i><i class="p bt"></i><div class="fr"><div class="wall" inert><div class="in"><div class="kk">${d[13]}</div><h2 tabindex="-1">${d[14]}</h2>${d[15]}<div><button class="nx" data-n="${(i+1)%7}">Next: ${D[(i+1)%7][0]} ${D[(i+1)%7][1]} →</button></div></div></div><div class="dl"><i class="o"><span class="lab">${d[0]}<br>${d[1]}</span></i><i class="n"></i></div><div class="dr"><i class="o"><span class="tag">${d[4]}</span></i><i class="n"></i></div><button class="hit" aria-label="Open ${d[0]} ${d[1]}"></button></div>`;
+const hb=c.querySelector('.hit');hb.onclick=()=>pick(i);c.querySelector('.nx').onclick=e=>pick(+e.currentTarget.dataset.n);hb.onmouseenter=()=>{pl.textContent='OPEN '+d[0]+' '+d[1]+' →';pl.classList.add('h')};hb.onmouseleave=()=>{pl.textContent='PICK A CONTAINER ↓';pl.classList.remove('h')};st.appendChild(c);cs.push(c)});
+function G(i){const p=innerWidth<=700,sw=st.clientWidth,sh=st.clientHeight,W=p?Math.min(150,sw*.34):Math.min(260,Math.max(170,sw*.17)),H=W*(p?.6:.43),k=p?2.6:2.3,d=D[i],yf=d[p?11:6];return{sw,W,H,Dp:W*(p?.56:.4),k,x:d[p?10:5]*sw,y:yf*sh,yf,cy:95+H*k/2}}
+const rod=(cy,h)=>Math.max(8,cy-h/2-87);
+function sz(c,w,h,d){c.style.setProperty('--w',w+'px');c.style.setProperty('--h',h+'px');c.style.setProperty('--d',d+'px')}
+function pile(i,ms){const g=G(i),c=cs[i],d=D[i];c.style.setProperty('--t',T(ms)+'ms');Object.assign(c.style,{left:g.x+'px',top:g.y+'px',zIndex:Math.round(g.yf*10),transform:`rotateX(${d[7]}deg) rotateY(${d[8]}deg) rotateZ(${d[9]}deg)`});sz(c,g.W,g.H,g.Dp)}
+function lift(i,ms){const g=G(i),c=cs[i];c.style.setProperty('--t',T(ms)+'ms');Object.assign(c.style,{left:g.sw/2+'px',top:g.cy+'px',zIndex:20,transform:'rotateX(-7deg) rotateY(-11deg) rotateZ(0deg)'});sz(c,g.W*g.k,g.H*g.k,g.Dp*g.k)}
+function claw(x,r,w,h,ms,op){cl.style.setProperty('--t',T(ms)+'ms');cl.style.left=x+'px';cl.style.setProperty('--rod',r+'px');cl.style.setProperty('--span',1.06*w+'px');cl.style.setProperty('--fh',14+.5*h+'px');cl.classList.toggle('op',op)}
+function lay(){cs.forEach((c,i)=>i===held?lift(i,0):pile(i,0));const g=G(Math.max(held,0));held<0?claw(g.sw/2,8,g.W,g.H,0,true):claw(g.sw/2,rod(g.cy,g.H*g.k),g.W*g.k,g.H*g.k,0,false)}
+async function run(i){
+ if(held===i)return;
+ if(held>=0){const j=held,g=G(j);cs[j].classList.remove('open');cs[j].querySelector('.wall').inert=true;await sl(450);pile(j,850);claw(g.x,rod(g.y,g.H),g.W,g.H,850,false);await sl(850);cl.classList.add('op');held=-1;await sl(260)}
+ const g=G(i);
+ claw(g.x,8,g.W,g.H,750,true);await sl(750);
+ claw(g.x,rod(g.y,g.H),g.W,g.H,560,true);await sl(560);
+ cl.classList.remove('op');await sl(260);
+ lift(i,950);claw(g.sw/2,rod(g.cy,g.H*g.k),g.W*g.k,g.H*g.k,950,false);await sl(950);
+ const c=cs[i],w=c.querySelector('.wall');c.classList.add('open');held=i;seen.add(i);document.querySelectorAll('[data-i]').forEach(b=>b.classList.toggle('on',+b.dataset.i===i));w.inert=false;w.querySelector('h2').focus({preventScroll:true});await sl(750)}
+async function pick(i){clearTimeout(ht);hd.classList.remove('show');if(busy){q=i;return}busy=1;try{await run(i)}finally{busy=0}if(q!==null){const n=q;q=null;pick(n)}else hint()}
+document.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>pick(+b.dataset.i));
+addEventListener('keydown',e=>{if(e.key==='Escape')pick(0)});
+addEventListener('resize',()=>{lay();hint()});
+lay();setTimeout(()=>pick(0),500);
+</script></body></html>
